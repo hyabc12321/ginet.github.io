@@ -10,16 +10,9 @@
 .row2, .row2 a{}
 .row3, .row3 a{}
 .row4, .row4 a{}
-.row5{border-top:0px solid; font-family: "Helevatica"}
+.row5{}
 
-.row5 .imgr {
-  width: 45px;
-  height: 22px;
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
-  margin: 0;
-}
+
 /* Page Intro
 --------------------------------------------------------------------------------------------------------------- */
 #pageintro .box{padding-top:75px; padding-bottom:10px;}
@@ -27,7 +20,7 @@
 #pageintro article{}
 #pageintro article .heading{margin-bottom:0px; font-size:40px;font-family: "Palatino"; text-transform: none;}
 #pageintro article .caption{margin-bottom:0px; font-size:14px;font-family: "Helevatica"; text-transform: none; line-height: 1.5;}
-#pageintro article .flag2{max-width: 1200px; width: 30%; margin:0 0 0 0;}
+#pageintro article .flag2{width: 30%; margin:0 0 0 0;}
 #pageintro article .flag{width: 56%; margin:20px 0 0 0;}
 #pageintro article p{font-size:16px;}
 #pageintro article footer{margin-top:50px;}
@@ -43,15 +36,14 @@
 
 /* Content Area
 --------------------------------------------------------------------------------------------------------------- */
-.container{padding:40px 0;}
+.container{padding:10px 0;}
 
 /* Content */
 .container .content{}
-.lowercase {text-transform: lowercase;}
 
 .headerBGD{height:36px;}
 .headerBGD h1{padding-top: 7px; padding-left: 10px; font-family: "Palatino"; text-transform: none;}
-
+.emptygrid {}
 #stats{text-align:center;}
 #stats li *{margin:0; padding:0;}
 #stats li:last-child{margin-bottom:0;}/* Used in mobile devices when elements stack */
@@ -131,19 +123,15 @@
 --------------------------------------------------------------------------------------------------------------- */
 #copyright{padding:15px 0;}
 #copyright *{margin:0; padding:0;}
-
+#cooperation{border-top:0px solid; font-family: "Helevatica"; float: left; text-align: left;}
 /* Transition Fade
 --------------------------------------------------------------------------------------------------------------- */
 *, *::before, *::after{transition:all .3s ease-in-out;}
 #mainav form *{transition:none !important;}
 
 
-/* ------------------------------------------------------------------------------------------------------------ */
-/* ------------------------------------------------------------------------------------------------------------ */
-/* ------------------------------------------------------------------------------------------------------------ */
-/* ------------------------------------------------------------------------------------------------------------ */
-/* ------------------------------------------------------------------------------------------------------------ */
-
+.shackhandicon{height: 20px; width: auto;  position: relative; display: inline-block; overflow: hidden; margin: 0; float: right;}
+.imgl, .imgr{display:inline-block; float:none; margin: 25px 0 0px 0;}
 
 /* Navigation
 --------------------------------------------------------------------------------------------------------------- */
@@ -158,7 +146,7 @@ nav ul, nav ol{margin:0; padding:0; list-style:none;}
 #mainav ul{margin: 0px; padding: 0px; list-style: none;}
 #mainav ul ul{z-index:9999; position:absolute; width:200px; text-transform:none;}
 #mainav ul ul ul{left:180px; top:0;}
-#mainav li{display:inline-block; width: 175px; font-family:"Palatino"; font-size: 20px; letter-spacing: 1px; text-align: center; position:relative; margin:0 20px 0 0; padding:0;}
+#mainav li{display:inline-block; width: 24%; font-family:"Palatino"; font-size: 20px; letter-spacing: 1px; text-align: center; position:relative;}
 #mainav li:first-child{margin-left: 0px;}
 #mainav li:last-child{margin-right:0;}
 #mainav li li{width:100%; margin:0;}
@@ -208,6 +196,8 @@ nav ul, nav ol{margin:0; padding:0; list-style:none;}
 #backtotop i{display:block; width:100%; height:100%; line-height:inherit;}
 #backtotop.visible{visibility:visible; opacity:.5;}
 #backtotop:hover{opacity:1;}
+
+#googlemap{}
 
 
 /* Tables
@@ -336,6 +326,7 @@ table a, #comments a{background-color:inherit;}
 --------------------------------------------------------------------------------------------------------------- */
 @media screen and (min-width:978px){
 	.hoc{max-width:978px;}
+	#mobilnav{display: none;}
 }
 
 
@@ -346,10 +337,24 @@ table a, #comments a{background-color:inherit;}
 
 	#header{padding:30px 0;}
 	#header #logo{margin:7px 0 0 0;}
+	
+	.burgernav{
+		display: block;
+		height: 40px;
+		width: 100%;
+		background: url(burgernavicon.png) no-repeat 2% center;
+		background-size: 8%;
+		background-color: #747474; 
+		cursor: pointer;
+	}
+	#mobilnav nav{line-height: normal;}
+	#mobilnav ul.clear{}
+	#mobilnav ul{overflow: hidden; background: #5A5A5A; height:0;}
+	#mobilnav ul.open{height: auto;}
+	#mobilnav ul li{font-family:"Palatino"; float: none; text-align: left; width: 100%; margin: 0;}
+	#mobilnav ul li a{color:#FFFFFF; padding: 10px; border-bottom: 1px solid #404040; display: block; margin: 0;}
 
-	#mainav{}
-	#mainav ul{display:none;}
-	#mainav form{display:block;}
+	.row1{display: none;}
 
 	#breadcrumb{}
 
@@ -361,17 +366,39 @@ table a, #comments a{background-color:inherit;}
 
 	#copyright{}
 	#copyright p:first-of-type{margin-bottom:10px;}
+	
 }
 
 
 @media screen and (max-width:750px){
-	.imgl, .imgr{display:inline-block; float:none; margin:1000px 0 10px 0;}
+	/* Mobile Navigation */
+	.burgernav{
+		display: block;
+		height: 40px;
+		width: 100%;
+		background: url(burgernavicon.png) no-repeat 2% center;
+		background-size: 16%;
+		background-color: #747474; 
+		cursor: pointer;
+	}
+	#mobilnav nav{line-height: normal;}
+	#mobilnav ul.clear{}
+	#mobilnav ul{overflow: hidden; background: #5A5A5A; height:0;}
+	#mobilnav ul.open{height: auto;}
+	#mobilnav ul li{float: none; text-align: left; width: 100%; margin: 0;}
+	#mobilnav ul li a{font-family:"Palatino"; color:#FFFFFF; padding: 10px; border-bottom: 1px solid #404040; display: block; margin: 0;}
+
+	.row1{display: none;}
+	.emptygrid{height: 0;}
+	.imgl, .imgr{display:inline-block; float:none; margin: 0px 0 10px 0;}
 	.fl_left, .fl_right{display:block; float:none;}
 	.fl_center{display:block; float:left; width: auto; height: 40;}
-	.one_half, .one_third, .two_third, .one_quarter, .three_quarter, .one_quarter, .two_quarter, .three_quarter{display:block; float:none; width:auto; margin:0 0 30px 0; padding:0;}
+	.one_half, .one_third, .two_third,.one_quarter, .two_quarter, .three_quarter, .one_fourth, .two_fourth, .three_fourth{display:block; float:none; width:auto; margin:0 0 30px 0; padding:0;}
 
 	#header{text-align:center;}
 	#header #logo{margin:0 0 15px 0;}
+	#cooperation{border-top:0px solid; font-family: "Helevatica"; float: center; text-align: center;}
+	.shackhandicon{width: 20%; height: auto; display: inline-block; margin: 0;}
 }
 
 
@@ -390,5 +417,7 @@ table a, #comments a{background-color:inherit;}
 	.font-x2{font-size:1.4rem;}
 	.font-x3{font-size:1.6rem;}
 
-	#pageintro .box{padding:100px 5%;}
+	#pageintro .box{padding:50px 5%;}
+	#pageintro article .flag{width: 80%; margin:20px 0 0 0;}
+	#pageintro article .flag2{width: 50%; margin:20px 0 0 0;}
 }
